@@ -10,7 +10,11 @@ for(let i=0; i<10; i++) {
 
 
 //your code...
-
+while(i < 10)
+{
+    console.log(" the value of i in the loop is : " + i);
+    i++;
+}
 
 
 
@@ -20,7 +24,7 @@ for(let i=0; i<10; i++) {
 //use javascript to compute the value of the above statement. Each individual operation needs to be a function expression. run all the functions after defining them, and print the answer to the console.
 
 //your code...
-
+console.log((30 + 2 * 20) / (10^2));
 
 /************************************************************* */
 //Problem 3:
@@ -39,8 +43,18 @@ for(let i=0; i<10; i++) {
 // undefined
 // ""
 
-
-
+console.log('20 is truthy because it is a value');
+console.log('0 is falsy because it is zero');
+console.log('"zero" is truthy because it is a string');
+console.log('const zero = 20; is truthy because the value is 20 which is truthy');
+console.log('null is falsy since there is no value');
+console.log('"0" is truthy because it is a string value');
+console.log('!"" is truthy because a not operator followed by an empty literal equates to true');
+console.log('{} is truthy because it is an empty object');
+console.log('() => {console.log("hello TEKcamp!")); is truthy because its a hashmap');
+console.log('125 is truthy because it is a value');
+console.log('undefined is falsy since it has no value');
+console.log('"" is falsy because it is an empty literal');
 
 /************************************************************* */
 // Problem 4:
@@ -62,7 +76,27 @@ if(day === "monday") {
     console.log("It's a weekend!")
 }
 
-
+switch(day)
+{
+    case "monday":
+        console.log("we got a long week ahead of us...");
+        break;
+    case "tueday":
+        console.log("tuesday's are still beterr than mondays, but LONG way to go still");
+        break;
+    case "wednesday":
+        console.log("We are smack dab in the middle of the week");
+        break;
+    case "thursday":
+        console.log("Thursday night... the mood is right");
+        break;
+    case "friday":
+        console.log("TGIF.  Friday truly is the best day of the week!");
+        break;
+    default:
+        console.log("It's a weekend!");
+        break;
+}
 
 /************************************************************* */
 // Problem 5: Refactor the following functions to use a ternary expression:
