@@ -24,7 +24,19 @@ while(i < 10)
 //use javascript to compute the value of the above statement. Each individual operation needs to be a function expression. run all the functions after defining them, and print the answer to the console.
 
 //your code...
-console.log((30 + 2 * 20) / (10^2));
+let product = function(num1, num2, num3) {
+    return (num1 + num2) * num3;
+  }
+  
+  let afterPowers = function(num1, num2) {
+    return Math.pow(num1, num2);
+  }
+  
+  let quotient = function(num1, num2) {
+    return num1 / num2;
+  }
+  
+  quotient(product(30,2,20), afterPowers(10, 2));
 
 /************************************************************* */
 //Problem 3:
@@ -114,6 +126,10 @@ if (age > 65) console.log("retired"); else {
 }
 
 
+age > 21 ? 'adult' : 'minor';
+age > 13 && age < 19 ? 'teen' : "not a teenager";
+age > 65 ? "retired" : "still working...";
+
 /************************************************************* */
 // Problem 6: Create an object literal that represents yourself.  set it to a variable that appropriately describes the object.  Include the following properties:
 /*
@@ -131,20 +147,64 @@ if (age > 65) console.log("retired"); else {
 
 //your code...
 
+var object = {
+    name: 'Matthew Castiglione',
+    age: 24,
+    gender: 'Male',
+    hobbies: 'Gaming, Programming, Model Gundams',
+    profession: 'Full Stack Java Developer In Training',
+    education: 'Bachelors of Science in Computer Science',
+    learn: function() {
+        return this.name;
+    },
+    getEducation: function () {
+        return this.education;
+    } 
+};
+
+
 
 /************************************************************* */
 // Problem 6: Create an object literal that represents any object in the real world that you like.  Try to come up with a realistic set of properties and methods that would accurately describe that object.  In at least one of your methods, use the this keyword to refer back to one of the properties you defined on this object literal.  
 
 //your code...
 
-
+var myPC = {
+    graphicsCard: "MSI Gaming X Trio Nvidia RTX 2070 Super",
+    processor: "AMD Ryzen 7 3800x",
+    motherBoard: "MSI MEG x570 ACE",
+    memory: "Corsair Vengence RGB 32 GB @ 3200 Mhz",
+    case: "MSI Sekira",
+    storage: "Samsung Evo 980 Pro 500GB",
+    cpuCooler: "AMD Ryzen Wraith RGB",
+    monitor: "ASUS PB277Q",
+    keyboard: "Razer Black Widow Elite",
+    mouse: "Corsair Glaive RGB",
+    powerSupply: "Corsair 800RMX",
+    currentFanColor: "Blue",
+    poweredOn: true,
+    powerButton: function(poweredOn) {
+        switch(poweredOn) {
+            case true:
+                poweredOn = false;
+                break;
+            case false:
+                poweredOn = true;
+                break;
+        }
+    }
+}
 
 /************************************************************* */
 //Problem 7: create a function that outputs your 3 favorite data types, with a message explaining why you like that data type.
 
 //your code...
 
-
+var myFavDataTypes = function() {
+    console.log("One of my favorite data types is Number because programming is just 1s and 0s. My favorite number being " + 42);
+    console.log("Another data type that I like is Boolean because it can only be true or false. Not really confusing" + true);
+    console.log("My last favorite data type is String because of all the cool functions it can use");
+}
 
 /************************************************************* */
 //Bonus assignments:
@@ -155,7 +215,6 @@ if (age > 65) console.log("retired"); else {
 
 
 // 2. Write an outer function called stockGain that has cost basis (basis) as a parameter; declare a variable called message that holds " is how much the stock has increased".  Return an inner function with years (yrs) as a parameter and declare a variable for growth rate (r) of 5%. Console log your calculation.
-
 // Once finished, declare a variable called futureValue that holds your stockGain function and enter any amount for the cost basis and a number for the number of years.  Run the function returned by the higher order function to display the future value of the stock.  
 
 //your code...

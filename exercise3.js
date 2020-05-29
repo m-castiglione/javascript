@@ -9,7 +9,15 @@
 
 //your code...
 
-
+var str = "";
+if (str === "")
+{
+    return true;
+}
+else
+{
+    return false;
+}
 
 
 
@@ -21,7 +29,8 @@
 
 
 //your code...
-
+const str = 'Learning JavaScript is fun!';
+console.log(str.replace("fun", "awesome"));
 
 
 
@@ -32,10 +41,13 @@
 
 
 //your code...
+var squared = function()
+{
+    let arr = [1, 2, 3, 4, 5];
+    return arr.map(arr => arr **2);
+}
 
-
-
-
+console.log(squared());
 
 
 /************************************************************* */
@@ -46,8 +58,13 @@
 
 //your code...
 
+const arr1 = [1, 3, 5, 7, 9, 1, 3, 5];
 
+let greaterThanThree = function(arr) {
+    return arr.filter(arr => arr > 3);
+}
 
+console.log(greaterThanThree(arr1))
 
 
 
@@ -59,9 +76,12 @@
 
 //your code...
 
+let arr = [1, 2, 3, 4, 5];
+let sum = function(arr) {
+    return arr.reduce((a, b) => a + b, 0);
+}
 
-
-
+console.log(sum(arr));
 
 
 /************************************************************* */
@@ -74,8 +94,13 @@
 
 //your code...
 
+let dnaStrand = "GCTA";
 
+let dnaSplit = function(str) {
+    return str.split("");
+}
 
+console.log(dnaSplit(dnaStrand));
 
 
 
@@ -86,13 +111,41 @@
 const numbers = [2,23,1,2,1,1,1,2,2.5,20,200,2000,,{k:1},20000,19999,1878,140,23,4,"sk",true,true,"true-dat","nice","one","two","three","3","tea",[]];
 
 function maxNumber(numbers) {
-    //your code...
+  var filtered = numbers.filter(function (item) {
+ return (parseInt(item) == item);
+  });
+  console.log(filtered);
+for (let i = 0; i < filtered.length; i++)
+{
+  if (filtered[i] === "3")
+  {
+    console.log("hello")
+    filtered[i] = 3;
+    console.log(filtered[i])
+    filtered.push(1);
+    filtered.push(2);
+    filtered.push(3);
+  }
+  
 }
+console.log(filtered);
+return Math.max(filtered);
+}
+
+maxNumber(numbers)
 
 // 7.b -Write a function that sorts the given numbers array.  Allow the function to sort the array in descending order
 
 function sortNums(numbers,desc=false) {
     //your code...
+    if (desc)
+    {
+        return numbers.sort(function(a, b){return b-a});
+    }
+    else
+    {
+      return numbers.sort();
+    }
 };
 
 
@@ -103,10 +156,22 @@ function sortNums(numbers,desc=false) {
 //add an example of at least 5 JavaScript data types to the given mapObj.  The key is the example data type, and the value is the name of the data type.  An object data type has already been set as the 1st key / val pair.
 
 const mapObj = new Map();
-mapObj.set({company : "TEKsystems"},"object");
+mapObj.set('company', "TEKsystems");
+mapObj.set('ID', "Integer")
+mapObj.set('isEmployee', "Boolean");
+mapObj.set('name', "String");
+mapObj.set('titlesOwned', "Array");
 
 
 console.log(mapObj.has({company : "TEKsystems"}));  
+console.log("The company key is written incorrectly.");
+
+for (let i = 0; i < mapObj.size; i++)
+{
+    let arrKey = [];
+    arrKey.push(mapObj[i]);
+    arrKey.shift();
+}
 //The above console.log() statmeent returns false.  Write another console.log() statement explaining why this line of code prints false.  Refactor the code on line 106, so you can successfully check to see if {company : "TEKsystems"} exists in the mapObj.
 
 //your code...
@@ -119,15 +184,25 @@ console.log(mapObj.has({company : "TEKsystems"}));
 
 let ones = [1,11,111,1111,11111,111111,1111111,11111111,111111111,1111111111];
 //reverse the array, without modifying the ones array.
-
+let reverseOnes = [...ones].reverse();
+console.log(reverseOnes);
 
 /************************************************************* */
 //Problem 12:
 //create a function called performer(cb) that takes in a callback function and runs that callback function.  It should return the output of the callback function.
 
 function performer(cb) {
+    var userID = 80085;
+    cb(userID);
     //code goes here
 }
+
+function welcomeUser(userID)
+{
+    console.log('Hello User ID ' + userID);
+}
+
+performer(welcomeUser);
 
 
 /************************************************************* */
